@@ -1,19 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data-service/data.service';
-import { User } from 'src/app/type-definitions/User.model';
+import { Users } from 'src/app/type-definitions/User.model';
+import * as userData from '../../_files/users.json';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
 })
-export class TableComponent implements OnInit {
-  users: any;
+export class TableComponent {
+  public userList: any = userData;
+  users = Users;
 
   constructor(public DataService: DataService) {}
 
   ngOnInit() {
-    this.users = this.DataService.getUsers();
-    console.log(this.users);
+    console.log(this.userList.users);
+    this.users = this.userList.users;
   }
 }

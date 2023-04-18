@@ -1,20 +1,16 @@
 import { EmailValidator } from '@angular/forms';
 
-export class User {
+export class Users {
   public id: number;
   public fullName: string;
-  public email: EmailValidator;
-  details: string;
+  public email: string;
+  public details: string;
 
-  constructor(
-    id: number,
-    fullName: string,
-    email: EmailValidator,
-    details: string
-  ) {
+  constructor(id: number, fullName: string, email: string, details: string) {
     this.id = id;
     this.fullName = fullName;
     this.email = email;
     this.details = details;
   }
 }
+[];
