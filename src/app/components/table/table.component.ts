@@ -1,7 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataService } from 'src/app/data-service/data.service';
 import { User } from 'src/app/type-definitions/User.model';
-import users from '../../_files/users.json';
 
 @Component({
   selector: 'app-table',
@@ -9,15 +8,13 @@ import users from '../../_files/users.json';
   styleUrls: ['./table.component.css'],
 })
 export class TableComponent {
-  public userList: User[] = users.users;
-
   usersForTable: User[] = [];
 
   constructor(public DataService: DataService) {}
 
   ngOnInit() {
-    console.log(this.userList);
-    this.usersForTable = this.userList;
+    console.log(this.DataService.userList);
+    this.usersForTable = this.DataService.userList;
   }
 
   onSortById() {
@@ -27,5 +24,9 @@ export class TableComponent {
 
   onSortByName() {
     this.usersForTable.sort((a, b) => a.fullName.localeCompare(b.fullName));
+  }
+
+  displayUserDetails() {
+    console.log('Display User Details');
   }
 }
