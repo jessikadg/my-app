@@ -1,10 +1,11 @@
-<p>table works!</p>
-
+<h1>Users Table</h1>
 <div>
   <table>
     <tr>
-      <th>id</th>
-      <th>Full Name</th>
+      <th (click)="onSortById()" style="cursor: pointer">id &#x25B2;</th>
+      <th (click)="onSortByName()" style="cursor: pointer">
+        Full Name &#x25B2;
+      </th>
       <th>Display Name</th>
       <th>email</th>
       <th>details</th>
