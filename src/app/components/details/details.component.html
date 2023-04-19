@@ -7,3 +7,19 @@
   <p>{{ selectedUser?.email }}</p>
   <p>{{ selectedUser?.details }}</p>
 </div>
+
+<form [formGroup]="updateUserForm" (ngSubmit)="onSubmit()">
+  <label for="fullName">Full Name </label>
+  <input id="fullName" type="text" formControlName="fullName" />
+  <br />
+  <label for="displayName"> Display Name </label>
+  <input id="displayName" type="text" formControlName="displayName" />
+  <br />
+  <label for="email"> Email </label>
+  <input id="email" type="email" formControlName="email" />
+  <br />
+  <label for="details">Details</label>
+  <textarea id="details" type="text" formControlName="details"></textarea>
+  <br />
+  <button type="submit">Save</button>
+</form>
