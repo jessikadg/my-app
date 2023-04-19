@@ -8,4 +8,12 @@ import { User } from '../type-definitions/User.model';
 })
 export class DataService {
   public userList: User[] = users.users;
+
+  getUserById(id: number) {
+    console.log(
+      'user ID from service is ',
+      this.userList.find((user: User) => user.id === id)
+    );
+    return this.userList.find((user: User) => user.id === id);
+  }
 }

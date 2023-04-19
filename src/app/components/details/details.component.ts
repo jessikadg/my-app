@@ -14,6 +14,14 @@ export class DetailsComponent {
   //setting default id
   id: number = 1;
 
+  selectedUser: User | undefined = {
+    id: 0,
+    fullName: '',
+    displayName: '',
+    email: '',
+    details: '',
+  };
+
   constructor(public DataService: DataService, private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -23,5 +31,7 @@ export class DetailsComponent {
     this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
     });
+
+    this.selectedUser = this.DataService.getUserById(this.id);
   }
 }

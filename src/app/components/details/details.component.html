@@ -1,7 +1,9 @@
 <a href="/" title="back">back to table</a>
-<div *ngFor="let user of usersOnDetails">
-  <h2>{{ user.fullName }}</h2>
-  <h3>{{ user.displayName }}</h3>
-  <p>{{ user.email }}</p>
-  <p>{{ user.details }}</p>
+
+<div>
+  <h2>User Details</h2>
+  <h1>{{ selectedUser?.fullName }}</h1>
+  <h3>{{ selectedUser?.displayName }}</h3>
+  <p>{{ selectedUser?.email }}</p>
+  <p>{{ selectedUser?.details }}</p>
 </div>
