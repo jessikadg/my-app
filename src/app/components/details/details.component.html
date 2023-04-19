@@ -1,1 +1,6 @@
-<p>details works!</p>
+<div *ngFor="let user of usersOnDetails">
+  <h2>{{ user.fullName }}</h2>
+  <h3>{{ user.displayName }}</h3>
+  <p>{{ user.email }}</p>
+  <p>{{ user.details }}</p>
+</div>
