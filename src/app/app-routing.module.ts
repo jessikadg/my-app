@@ -6,12 +6,8 @@ import { DetailsComponent } from './components/details/details.component';
 const routes: Routes = [
   { path: '', component: TableComponent },
   {
-    path: 'details',
+    path: 'details/:id',
     component: DetailsComponent,
-    children: [
-      { path: '', redirectTo: '', pathMatch: 'full' },
-      { path: ':id', component: DetailsComponent },
-    ],
   },
 ];
 

@@ -25,8 +25,4 @@ export class TableComponent {
   onSortByName() {
     this.usersForTable.sort((a, b) => a.fullName.localeCompare(b.fullName));
   }
-
-  displayUserDetails() {
-    console.log('Display User Details');
-  }
 }
