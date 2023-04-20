@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { Component, Injectable } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { DataService } from 'src/app/data-service/data.service';
 import { User } from 'src/app/type-definitions/User.model';
 
@@ -11,6 +12,7 @@ import { User } from 'src/app/type-definitions/User.model';
 })
 export class DetailsComponent {
   usersOnDetails: User[] = [];
+  subscription!: Subscription;
 
   //setting default id
   id: number = 1;
@@ -23,48 +25,19 @@ export class DetailsComponent {
     details: '',
   };
 
-  constructor(
-    public DataService: DataService,
-    private route: ActivatedRoute,
-    private formBuilder: FormBuilder
-  ) {}
-
-  updateUserForm = this.formBuilder.group({
-    fullName: '',
-    email: '',
-    displayName: '',
-    details: '',
-  });
+  constructor(public DataService: DataService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.usersOnDetails = this.DataService.userList;
-
-    // getting ID from routing params:
     this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
     });
 
     this.selectedUser = this.DataService.getUserById(this.id);
-
-    //Pre-filling the Form with Data from the Service:
-    this.updateUserForm
-      .get('fullName')
-      ?.setValue(this.selectedUser?.fullName || 'Name');
-
-    this.updateUserForm
-      .get('email')
-      ?.setValue(this.selectedUser?.email || 'Email');
-
-    this.updateUserForm
-      .get('displayName')
-      ?.setValue(this.selectedUser?.displayName || 'Display Name');
-
-    this.updateUserForm
-      .get('details')
-      ?.setValue(this.selectedUser?.details || 'Details');
   }
 
-  onSubmit(): void {
-    console.log(this.updateUserForm.value);
+  onSubmit(form: NgForm) {
+    const value = form.value;
+    const newUser = value.fullName;
+    console.log(newUser);
   }
 }

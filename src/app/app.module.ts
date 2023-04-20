@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TableComponent } from './components/table/table.component';
 import { DetailsComponent } from './components/details/details.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, TableComponent, DetailsComponent],
@@ -15,7 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
+    // ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

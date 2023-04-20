@@ -8,18 +8,36 @@
   <p>{{ selectedUser?.details }}</p>
 </div>
 
-<form [formGroup]="updateUserForm" (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
   <label for="fullName">Full Name </label>
-  <input id="fullName" type="text" formControlName="fullName" />
+  <input
+    id="fullName"
+    class="class-control"
+    type="text"
+    name="fullName"
+    ngModel
+  />
   <br />
   <label for="displayName"> Display Name </label>
-  <input id="displayName" type="text" formControlName="displayName" />
+  <input
+    id="displayName"
+    class="class-control"
+    type="text"
+    name="displayName"
+    ngModel
+  />
   <br />
   <label for="email"> Email </label>
-  <input id="email" type="email" formControlName="email" />
+  <input id="email" class="class-control" type="text" name="email" ngModel />
   <br />
   <label for="details">Details</label>
-  <textarea id="details" type="text" formControlName="details"></textarea>
+  <textarea
+    id="details"
+    class="class-control"
+    type="text"
+    name="details"
+    ngModel
+  ></textarea>
   <br />
   <button type="submit">Save</button>
 </form>
