@@ -13,6 +13,7 @@ export class TableComponent {
 
   userWasUpdatedDone: Subscription;
   userUpdated: User;
+  color: string = '';
 
   constructor(public DataService: DataService) {}
 

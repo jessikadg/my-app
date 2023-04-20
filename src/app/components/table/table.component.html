@@ -11,7 +11,7 @@
       <th>details</th>
     </tr>
 
-    <tr *ngFor="let user of usersForTable">
+    <tr *ngFor="let user of usersForTable" appHighlight="lightgrey">
       <td>{{ user.id }}</td>
       <td>{{ user.fullName }}</td>
       <td>{{ user.displayName }}</td>

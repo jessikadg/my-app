@@ -7,9 +7,15 @@ import { AppComponent } from './app.component';
 import { TableComponent } from './components/table/table.component';
 import { DetailsComponent } from './components/details/details.component';
 import { FormsModule } from '@angular/forms';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
-  declarations: [AppComponent, TableComponent, DetailsComponent],
+  declarations: [
+    AppComponent,
+    TableComponent,
+    DetailsComponent,
+    HighlightDirective,
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
