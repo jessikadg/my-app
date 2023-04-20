@@ -24,7 +24,7 @@ export class DetailsComponent {
     details: '',
   };
 
-  private userWasUpdatedDone: Subscription;
+  userWasUpdatedDone: Subscription;
 
   constructor(public DataService: DataService, private route: ActivatedRoute) {}
 
@@ -34,8 +34,6 @@ export class DetailsComponent {
     });
 
     this.selectedUser = this.DataService.getUserById(this.id)!;
-
-    console.log(this.updateUserForm);
 
     this.userWasUpdatedDone = this.DataService.userUpdated.subscribe(
       (user: User) => {

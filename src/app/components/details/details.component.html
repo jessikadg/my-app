@@ -1,4 +1,4 @@
-<a href="/" title="back">back to table</a>
+<a [routerLink]="['']" title="back">back to table</a>
 
 <div>
   <h2>User Details</h2>
@@ -9,6 +9,15 @@
 </div>
 
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <label for="id">ID</label>
+  <input
+    id="id"
+    class="class-control"
+    type="number"
+    name="id"
+    [ngModel]="selectedUser.id"
+  />
+  <br />
   <label for="fullName">Full Name </label>
   <input
     id="fullName"
@@ -36,14 +45,14 @@
     [ngModel]="selectedUser.email"
   />
   <br />
-  <!-- <label for="details">Details</label>
+  <label for="details">Details</label>
   <textarea
     id="details"
     class="class-control"
     type="text"
     name="details"
-    ngModel
-  ></textarea> -->
+    [ngModel]="selectedUser.details"
+  ></textarea>
   <br />
   <button type="submit">Save</button>
 </form>

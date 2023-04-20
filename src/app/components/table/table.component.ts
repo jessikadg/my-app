@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { DataService } from 'src/app/data-service/data.service';
 import { User } from 'src/app/type-definitions/User.model';
 
@@ -10,11 +11,21 @@ import { User } from 'src/app/type-definitions/User.model';
 export class TableComponent {
   usersForTable: User[] = [];
 
+  userWasUpdatedDone: Subscription;
+  userUpdated: User;
+
   constructor(public DataService: DataService) {}
 
   ngOnInit() {
     console.log(this.DataService.userList);
     this.usersForTable = this.DataService.userList;
+
+    this.userWasUpdatedDone = this.DataService.userUpdated.subscribe(
+      (user: User) => {
+        this.userUpdated = user;
+        console.log(this.userUpdated);
+      }
+    );
   }
 
   onSortById() {
