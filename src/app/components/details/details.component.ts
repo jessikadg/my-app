@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -11,19 +11,20 @@ import { User } from 'src/app/type-definitions/User.model';
   styleUrls: ['./details.component.css'],
 })
 export class DetailsComponent {
+  @ViewChild('f', { read: NgForm }) updateUserForm: NgForm;
+
   usersOnDetails: User[] = [];
-  subscription!: Subscription;
-
-  //setting default id
-  id: number = 1;
-
-  selectedUser: User | undefined = {
+  subscription: Subscription;
+  id: number;
+  selectedUser: User = {
     id: 0,
     fullName: '',
     displayName: '',
     email: '',
     details: '',
   };
+
+  private userWasUpdatedDone: Subscription;
 
   constructor(public DataService: DataService, private route: ActivatedRoute) {}
 
@@ -32,12 +33,25 @@ export class DetailsComponent {
       this.id = +params['id'];
     });
 
-    this.selectedUser = this.DataService.getUserById(this.id);
+    this.selectedUser = this.DataService.getUserById(this.id)!;
+
+    console.log(this.updateUserForm);
+
+    this.userWasUpdatedDone = this.DataService.userUpdated.subscribe(
+      (user: User) => {
+        console.log('inside subscription', user);
+
+        // find the user by id, and assign that one to selectedUser
+        this.selectedUser = user;
+      }
+    );
   }
 
   onSubmit(form: NgForm) {
-    const value = form.value;
-    const newUser = value.fullName;
-    console.log(newUser);
+    console.log(this.selectedUser.id, this.updateUserForm.value);
+    this.DataService.updateUserById(
+      this.selectedUser.id,
+      this.updateUserForm.value
+    );
   }
 }

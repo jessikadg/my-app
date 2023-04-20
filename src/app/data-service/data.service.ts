@@ -9,7 +9,8 @@ import { Subject } from 'rxjs';
 })
 export class DataService {
   public userList: User[] = users.users;
-  selectedUserToUpdate: any = {};
+
+  selectedUserToUpdate: User;
 
   userUpdated = new Subject<User>();
 
@@ -21,12 +22,12 @@ export class DataService {
     return this.userList.find((user: User) => user.id === id);
   }
 
-  updateUserById(id: Number, user: any) {
-    console.log('User updated to', id, user);
-    this.selectedUserToUpdate = this.userList.find(
-      (foundUser: User) => foundUser.id === user.id
-    );
+  updateUserById(id: Number, updatedUser: User) {
     console.log(this.selectedUserToUpdate);
-    this.userUpdated.next(this.selectedUserToUpdate);
+
+    this.userUpdated.next(updatedUser);
+
+    console.log('updated user', updatedUser);
+    console.log('user list', this.userList);
   }
 }

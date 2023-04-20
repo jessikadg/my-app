@@ -2,10 +2,10 @@
 
 <div>
   <h2>User Details</h2>
-  <h1>{{ selectedUser?.fullName }}</h1>
-  <h3>{{ selectedUser?.displayName }}</h3>
-  <p>{{ selectedUser?.email }}</p>
-  <p>{{ selectedUser?.details }}</p>
+  <h1>{{ selectedUser.fullName }}</h1>
+  <h3>{{ selectedUser.displayName }}</h3>
+  <p>{{ selectedUser.email }}</p>
+  <p>{{ selectedUser.details }}</p>
 </div>
 
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
@@ -15,7 +15,7 @@
     class="class-control"
     type="text"
     name="fullName"
-    ngModel
+    [ngModel]="selectedUser.fullName"
   />
   <br />
   <label for="displayName"> Display Name </label>
@@ -24,20 +24,26 @@
     class="class-control"
     type="text"
     name="displayName"
-    ngModel
+    [ngModel]="selectedUser.displayName"
   />
   <br />
   <label for="email"> Email </label>
-  <input id="email" class="class-control" type="text" name="email" ngModel />
+  <input
+    id="email"
+    class="class-control"
+    type="text"
+    name="email"
+    [ngModel]="selectedUser.email"
+  />
   <br />
-  <label for="details">Details</label>
+  <!-- <label for="details">Details</label>
   <textarea
     id="details"
     class="class-control"
     type="text"
     name="details"
     ngModel
-  ></textarea>
+  ></textarea> -->
   <br />
   <button type="submit">Save</button>
 </form>
