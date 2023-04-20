@@ -37,8 +37,6 @@ export class DetailsComponent {
 
     this.userWasUpdatedDone = this.DataService.userUpdated.subscribe(
       (user: User) => {
-        console.log('inside subscription', user);
-
         // find the user by id, and assign that one to selectedUser
         this.selectedUser = user;
       }
@@ -46,7 +44,6 @@ export class DetailsComponent {
   }
 
   onSubmit(form: NgForm) {
-    console.log(this.selectedUser.id, this.updateUserForm.value);
     this.DataService.updateUserById(
       this.selectedUser.id,
       this.updateUserForm.value

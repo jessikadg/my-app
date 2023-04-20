@@ -17,20 +17,17 @@ export class TableComponent {
   constructor(public DataService: DataService) {}
 
   ngOnInit() {
-    console.log(this.DataService.userList);
     this.usersForTable = this.DataService.userList;
 
     this.userWasUpdatedDone = this.DataService.userUpdated.subscribe(
       (user: User) => {
         this.userUpdated = user;
-        console.log(this.userUpdated);
       }
     );
   }
 
   onSortById() {
     this.usersForTable.sort((a, b) => a.id - b.id);
-    console.log(this.usersForTable.sort((a, b) => a.id - b.id));
   }
 
   onSortByName() {
