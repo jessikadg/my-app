@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DataService } from 'src/app/data-service/data.service';
-import { User } from 'src/app/type-definitions/User.model';
+import { User } from 'src/app/model/User.model';
 
 @Component({
   selector: 'app-table',
