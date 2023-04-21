@@ -8,6 +8,7 @@ import { TableComponent } from './components/table/table.component';
 import { DetailsComponent } from './components/details/details.component';
 import { FormsModule } from '@angular/forms';
 import { HighlightDirective } from './directives/highlight.directive';
+import { NameFormatterPipe } from './pipes/name-formatter.pipe';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     TableComponent,
     DetailsComponent,
     HighlightDirective,
+    NameFormatterPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

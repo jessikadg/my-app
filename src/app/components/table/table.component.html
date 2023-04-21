@@ -6,16 +6,19 @@
       <th (click)="onSortByName()" style="cursor: pointer">
         Full Name &#x25B2;
       </th>
+      <th>Initials</th>
       <th>Display Name</th>
       <th>email</th>
-      <th>details</th>
+      <th>Details</th>
     </tr>
 
     <tr *ngFor="let user of usersForTable" appHighlight="lightgrey">
       <td>{{ user.id }}</td>
       <td>{{ user.fullName }}</td>
+      <td>{{ user.fullName | nameFormatter }}</td>
       <td>{{ user.displayName }}</td>
       <td>{{ user.email }}</td>
+
       <td>
         <a [routerLink]="['details', user.id]"> Go to User Details </a>
       </td>
