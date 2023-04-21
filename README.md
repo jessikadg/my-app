@@ -46,6 +46,9 @@ I decided to start with the part that could be the most tricky: displaying and u
 
 Creating two components: Table and Details looked like the most clear, consive and clean approach to the project. Creating a `User.model.ts` also seemed to be the smart thing to do, considering I'd be passing a lot of props with that.
 
+<img width="920" alt="Screenshot 2023-04-21 at 13 46 33" src="https://user-images.githubusercontent.com/48770521/233628040-0e201f9e-b32c-46e6-ad21-b5aa651a2cc1.png">
+
+
 Starting with the Table Component., I first made sure I could import the users from the JSON file, and display them.
 
 Then I created the table, using a `*ngFor` for the roles, generating one row per user.
