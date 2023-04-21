@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {
+}
+
+body {
+  max-width: 700px;
+  margin: 50px auto;
+}
+
+table > tr {
+  height: 30px;
+  border-spacing: 0px;
+  border-collapse: "";
+}
+
+table > tr > th {
+  padding: 0 10px;
+}
+
+table > tr > td {
+  border: none;
+  border-spacing: 0px;
+  padding: 0 10px;
+}
+
+label {
+  display: inline-flex;
+  width: 100px;
+  margin: 10px 0px;
+}
+
+input {
+  padding: 4px 8px;
+}
+
+textarea {
+  margin-top: 10px;
+  padding: 4px 8px;
+  width: 300px;
+  height: 50px;
+}
+
+button {
+  width: 150px;
+  margin: 20px 0px;
+  padding: 5px 20px;
+  border: none;
+  background-color: rgb(233, 232, 232);
+}
+
+hr {
+  margin-block-start: 2em;
+  margin-block-end: 2em;
+}
