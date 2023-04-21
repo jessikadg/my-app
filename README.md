@@ -20,6 +20,12 @@ Optional:
 
 You are free to use any packages of choice.
 
+---
+
+### Live Version
+
+🚀 Project is deployed at https://angular-project-by-jessthedev.vercel.app/
+
 
 ---
 
