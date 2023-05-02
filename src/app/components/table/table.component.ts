@@ -6,7 +6,6 @@ import { User } from 'src/app/model/User.model';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.css'],
 })
 export class TableComponent {
   usersForTable: User[] = [];
