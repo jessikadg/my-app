@@ -1,6 +1,6 @@
-# Angular Assingment
+# Angular App
 
-Criteria from Assigment:
+Criteria from Assignment:
 
 The Angular 15 application acquires and displays a table with all the users loaded from users.json. 
 
@@ -89,9 +89,4 @@ Getting typescript and the JSON file to link to each other was surprisingly tric
 I used no extra packages for this project beyond the ones from Angular itself. I didn't see the need for it. And as a good practice, the least packages to get the job done, the less changes for maintenance headaches in the future. So I didn't add any.
 
 Improvements-wise, I'd like to have had the time to implement some Tests, even if simple ones. If I could, I would first give a try for the tests that already come with Angular itself, and see how that goes.
-
-
-## Final Comments
-
-I appreciate the opportunity to demonstrate my Angular skills in this assignment, and I hope I have sufficiently documented my thought process and decision-making. Thank you for your time, and looking forward to hearing your feedback.
 
